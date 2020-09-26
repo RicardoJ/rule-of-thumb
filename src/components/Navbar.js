@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 const Nav = styled.div`
   display: flex;
   justify-content: space-around;
-  
 `;
 const Title = styled.div`
   font-size: 32px;
@@ -20,6 +19,7 @@ const MenuItem = styled(Link)`
   text-decoration: none;
   color: white;
 `;
+const SearchButton = styled.button``;
 const NavBar = () => {
   return (
     <Router>
@@ -29,6 +29,7 @@ const NavBar = () => {
           <MenuItem to="/past-trial">Past Trials</MenuItem>
           <MenuItem to="/how-it-works">How It Works</MenuItem>
           <MenuItem to="/log-in">Log in/Sign Up</MenuItem>
+          <SearchButton />
         </Menu>
       </Nav>
     </Router>

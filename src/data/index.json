@@ -3,7 +3,7 @@
     "characters": [{
             "id": 1,
             "name": "Pope Francis",
-            "image": "/assets/imgHeader.svg"
+            "image": "imgHeader.svg"
         },
         {
             "id": 2,
@@ -15,7 +15,7 @@
             "id": 3,
             "name": "Mark Zuckerberg",
             "description":"Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
-            "image": "/assets/imgHeader.svg"
+            "image": "imgHeader.svg"
         },
         {
             "id": 4,
