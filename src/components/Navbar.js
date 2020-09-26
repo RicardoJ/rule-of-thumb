@@ -1,0 +1,38 @@
+import React from "react";
+import styled from "styled-components";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+
+const Nav = styled.div`
+  display: flex;
+  justify-content: space-around;
+  
+`;
+const Title = styled.div`
+  font-size: 32px;
+`;
+const Menu = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const MenuItem = styled(Link)`
+  font-size: 16px;
+  margin-right: 80px;
+  text-decoration: none;
+  color: white;
+`;
+const NavBar = () => {
+  return (
+    <Router>
+      <Nav>
+        <Title>Rule of Thumb.</Title>
+        <Menu>
+          <MenuItem to="/past-trial">Past Trials</MenuItem>
+          <MenuItem to="/how-it-works">How It Works</MenuItem>
+          <MenuItem to="/log-in">Log in/Sign Up</MenuItem>
+        </Menu>
+      </Nav>
+    </Router>
+  );
+};
+
+export default NavBar;
