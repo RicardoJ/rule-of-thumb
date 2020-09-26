@@ -27,7 +27,7 @@ const SearchButton = styled.button`
   border: none;
 `;
 const SearchIcon = styled.img``;
-console.log(search);
+
 const NavBar = () => {
   return (
     <Router>
