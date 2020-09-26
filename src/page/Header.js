@@ -5,9 +5,9 @@ import NavBar from "../components/Navbar";
 import data from "../data";
 
 const [header] = data.characters;
-// h = w x 0.66 => w = h / 0.66
+
 const Container = styled.div`
-  padding: 20px 0;
+  padding: 35px 0;
   box-sizing: border-box;
   height: 100vh;
   background-image: url(${require(`../assets/${header.image}`)});

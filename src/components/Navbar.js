@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import data from "../data";
+
+const { search } = data.icons;
 
 const Nav = styled.div`
   display: flex;
@@ -10,8 +13,7 @@ const Title = styled.div`
   font-size: 32px;
 `;
 const Menu = styled.div`
-  display: flex;
-  align-items: center;
+  margin-left: 200px;
 `;
 const MenuItem = styled(Link)`
   font-size: 16px;
@@ -19,7 +21,13 @@ const MenuItem = styled(Link)`
   text-decoration: none;
   color: white;
 `;
-const SearchButton = styled.button``;
+const SearchButton = styled.button`
+  background: transparent;
+  cursor: pointer;
+  border: none;
+`;
+const SearchIcon = styled.img``;
+console.log(search);
 const NavBar = () => {
   return (
     <Router>
@@ -29,7 +37,9 @@ const NavBar = () => {
           <MenuItem to="/past-trial">Past Trials</MenuItem>
           <MenuItem to="/how-it-works">How It Works</MenuItem>
           <MenuItem to="/log-in">Log in/Sign Up</MenuItem>
-          <SearchButton />
+          <SearchButton>
+            <SearchIcon src={require(`../assets/icons/${search.image}`)} />
+          </SearchButton>
         </Menu>
       </Nav>
     </Router>
