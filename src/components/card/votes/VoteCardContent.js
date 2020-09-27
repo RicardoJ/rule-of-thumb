@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  padding: 0px 0px 0px 35px;
+  padding: 0 0 0 35px;
   width: 65%;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 `;
 
 const Text = styled.p`
