@@ -64,7 +64,7 @@ const DeadLineDays = styled.div`
   color: #464646;
   width: 95%;
 `;
-console.log(`../assets/icons/${data.icons.wikipedia}`);
+
 const Header = () => {
   return (
     <Container>
@@ -76,7 +76,7 @@ const Header = () => {
           moreInformation="More information"
           wikipediaImage ={require(`../assets/icons/${data.icons.wikipedia.image}`)}
         />
-        <CardFooter />
+        <CardFooter text="What's Your Verdict"/>
       </Card>
       <DeadLine>
         <DeadLineDescription>closing in</DeadLineDescription>

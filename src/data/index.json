@@ -44,10 +44,10 @@
             "image": "searchButton.svg"
         },
         "like": {
-            "image": "/assets/imgHeader.svg"
+            "image": "like.svg"
         },
         "dislike": {
-            "image": "/assets/imgHeader.svg"
+            "image": "dislike.svg"
         },
         "wikipedia": {
             "image": "Wiki.svg"
