@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const VoteBtn = styled.button`
@@ -9,10 +9,17 @@ const VoteBtn = styled.button`
   width: 100px;
   color: white;
   font-size: 14px;
- 
 `;
-const VoteButton = () => {
-  return <VoteBtn>Vote Now</VoteBtn>;
+const VoteButton = ({doVote}) => {
+  const [vote, setVote] = useState(false);
+
+  const toVote = () => {
+    doVote()
+    setVote(!vote);
+  };
+  return (
+    <VoteBtn onClick={toVote}> {vote ? "Vote again" : "Vote now"}</VoteBtn>
+  );
 };
 
 export default VoteButton;

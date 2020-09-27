@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import DislikeButton from "../components/button/DislikeButton";
 import LikeButton from "../components/button/LikeButton";
@@ -7,6 +7,7 @@ import VoteCard from "../components/card/votes/VoteCard";
 import VoteCardContent from "../components/card/votes/VoteCardContent";
 import VoteCardHeader from "../components/card/votes/VoteCardHeader";
 import data from "../data";
+import { saveVote, getVoteState } from "../services";
 
 const { like, dislike } = data.icons;
 const Container = styled.div`
@@ -32,6 +33,13 @@ const VoteSection = styled.div`
 `;
 
 const Votes = () => {
+  const [voted, setVoted] = useState(true);
+
+  const doVote = () => {
+    setVoted(!voted);
+    saveVote(voted);
+  };
+
   return (
     <Container>
       <Title>Votes</Title>
@@ -43,9 +51,14 @@ const Votes = () => {
               date={character.date}
               section={character.section}
             />
-            <VoteCardContent text={character.description} />
+            <VoteCardContent
+              text={
+                JSON.parse(getVoteState())
+                  ? data.voted.text
+                  : character.description
+              }
+            />
             <VoteSection>
-            
               <LikeButton
                 image={like.image}
                 height="40px"
@@ -58,7 +71,7 @@ const Votes = () => {
                 width="40px"
                 imageSize="22px"
               />
-              <VoteButton />
+              <VoteButton doVote={doVote} />
             </VoteSection>
           </VoteCard>
         ))}
