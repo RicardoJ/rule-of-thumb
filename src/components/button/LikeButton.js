@@ -5,13 +5,20 @@ const LikeBtn = styled.button`
   background-color: rgba(45, 187, 179, 0.5);
   border: none;
   cursor: pointer;
-  height: 121px;
-  width: 50%;
+  height: ${(props) => props.height};
+  width: ${(props) => props.width};
 `;
-const LikeButton = ({ image }) => {
+const LikeImage = styled.img`
+  width: ${(props) => props.imageSize || "36px"};
+`;
+const LikeButton = ({ image, height, width, imageSize }) => {
   return (
-    <LikeBtn>
-      <img alt="like" src={require(`../../assets/icons/${image}`)} />
+    <LikeBtn height={height} width={width}>
+      <LikeImage
+        imageSize={imageSize}
+        alt="like"
+        src={require(`../../assets/icons/${image}`)}
+      />
     </LikeBtn>
   );
 };
