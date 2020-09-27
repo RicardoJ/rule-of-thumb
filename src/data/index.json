@@ -48,6 +48,9 @@
         },
         "dislike": {
             "image": "/assets/imgHeader.svg"
+        },
+        "wikipedia": {
+            "image": "Wiki.svg"
         }
     }
 }

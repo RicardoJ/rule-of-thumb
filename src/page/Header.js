@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import Card from "../components/card/Card";
 
 import NavBar from "../components/Navbar";
 import data from "../data";
+import CardHeader from "../components/card/CardHeader";
+import CardContent from "../components/card/CardContent";
+import CardFooter from "../components/card/CardFooter";
 
 const [header] = data.characters;
 
@@ -38,7 +42,7 @@ const DeadLine = styled.div`
   align-items: center;
   height: 44px;
   width: 100%;
-  background-color: rgba(174,167,160,0.4);
+  background-color: rgba(174, 167, 160, 0.4);
 
   box-sizing: border-box;
 `;
@@ -47,6 +51,12 @@ const DeadLineDescription = styled.div`
   text-transform: uppercase;
   margin: 0px 35px 0 400px;
   width: 5%;
+  &:after {
+    content: " ";
+    border-left: 9px solid red;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
 `;
 const DeadLineDays = styled.div`
   background-color: rgba(229, 228, 227, 0.7);
@@ -54,11 +64,20 @@ const DeadLineDays = styled.div`
   color: #464646;
   width: 95%;
 `;
-
+console.log(`../assets/icons/${data.icons.wikipedia}`);
 const Header = () => {
   return (
     <Container>
       <NavBar />
+      <Card>
+        <CardHeader question="What's your opinion on" name={header.name} />
+        <CardContent
+          text={data.opinion.text}
+          moreInformation="More information"
+          wikipediaImage ={require(`../assets/icons/${data.icons.wikipedia.image}`)}
+        />
+        <CardFooter />
+      </Card>
       <DeadLine>
         <DeadLineDescription>closing in</DeadLineDescription>
         <DeadLineDays>22 days</DeadLineDays>
