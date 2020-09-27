@@ -8,14 +8,13 @@ import CardHeader from "../components/card/CardHeader";
 import CardContent from "../components/card/CardContent";
 import CardFooter from "../components/card/CardFooter";
 
-const [header] = data.characters;
 
 const Container = styled.div`
   display: grid;
   padding: 35px 0 0 0;
   box-sizing: border-box;
   height: 100vh;
-  background-image: url(${require(`../assets/${header.image}`)});
+  background-image: url(${require(`../assets/${data.opinionCharacter.image}`)});
   background-size: cover;
   box-shadow: inset 0px 140px 74px -20px rgba(0, 0, 0, 0.57);
   color: white;
@@ -70,7 +69,7 @@ const Header = () => {
     <Container>
       <NavBar />
       <Card>
-        <CardHeader question="What's your opinion on" name={header.name} />
+        <CardHeader question="What's your opinion on" name={data.opinionCharacter.name} />
         <CardContent
           text={data.opinion.text}
           moreInformation="More information"

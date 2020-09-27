@@ -1,11 +1,10 @@
 {
-
+    "opinionCharacter": {
+        "id": 1,
+        "name": "Pope Francis",
+        "image": "imgHeader.svg"
+    },
     "characters": [{
-            "id": 1,
-            "name": "Pope Francis",
-            "image": "imgHeader.svg"
-        },
-        {
             "id": 2,
             "name": "Kanye West",
             "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
@@ -31,6 +30,7 @@
         }
 
     ],
+
     "opinion": {
         "text": "He’s talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true pedophile punishing pontiff? (thumbs up) "
     },
