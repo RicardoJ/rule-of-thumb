@@ -1,0 +1,56 @@
+{
+
+    "characters": [{
+            "id": 1,
+            "name": "Pope Francis",
+            "image": "imgHeader.svg"
+        },
+        {
+            "id": 2,
+            "name": "Kanye West",
+            "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+            "image": "/assets/imgHeader.svg"
+        },
+        {
+            "id": 3,
+            "name": "Mark Zuckerberg",
+            "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+            "image": "imgHeader.svg"
+        },
+        {
+            "id": 4,
+            "name": "Cristina Fernández de Kirchner",
+            "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+            "image": "/assets/imgHeader.svg"
+        },
+        {
+            "id": 5,
+            "name": "Malala Yousafzai",
+            "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+            "image": "/assets/imgHeader.svg"
+        }
+
+    ],
+    "opinion": {
+        "text": "He’s talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true pedophile punishing pontiff? (thumbs up) "
+    },
+    "voted": {
+        "text": "Thank you for voting!"
+    },
+
+    "icons": {
+
+        "search": {
+            "image": "searchButton.svg"
+        },
+        "like": {
+            "image": "/assets/imgHeader.svg"
+        },
+        "dislike": {
+            "image": "/assets/imgHeader.svg"
+        },
+        "wikipedia": {
+            "image": "Wiki.svg"
+        }
+    }
+}
