@@ -48,14 +48,8 @@ const DeadLine = styled.div`
 const DeadLineDescription = styled.div`
   font-size: 13px;
   text-transform: uppercase;
-  margin: 0px 35px 0 400px;
-  width: 5%;
-  &:after {
-    content: " ";
-    border-left: 9px solid red;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-  }
+  margin-left: 400px;
+  width: 8%;
 `;
 const DeadLineDays = styled.div`
   background-color: rgba(229, 228, 227, 0.7);
