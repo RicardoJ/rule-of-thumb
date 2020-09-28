@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const Name = styled.div`
   display: flex;
-  font-size: 50px;
+  font-size: 52px;
 `;
 
 const Date = styled.div`
