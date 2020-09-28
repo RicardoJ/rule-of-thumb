@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import {  Link, Switch, Route } from "react-router-dom";
 import data from "../data";
+import PastTrial from "../page/PastTrial";
+import HowItWorks from "../page/HowItWorks";
+import LogIn from "../page/LogIn";
+
 
 const { search } = data.icons;
 
@@ -30,7 +34,7 @@ const SearchIcon = styled.img``;
 
 const NavBar = () => {
   return (
-    <Router>
+    <>
       <Nav>
         <Title>Rule of Thumb.</Title>
         <Menu>
@@ -42,7 +46,12 @@ const NavBar = () => {
           </SearchButton>
         </Menu>
       </Nav>
-    </Router>
+      <Switch>
+        <Route path="/past-trial" component={PastTrial}></Route>
+        <Route path="/how-it-works" component={HowItWorks}></Route>
+        <Route path="/log-in" component={LogIn}></Route>
+      </Switch>
+    </>
   );
 };
 
