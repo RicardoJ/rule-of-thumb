@@ -7,6 +7,7 @@ import LikeButton from "../../button/LikeButton";
 import VoteButton from "../../button/VoteButton";
 import data from "../../../data";
 import { STATUS } from "../../../constants/constants";
+import VotesBar from "../../bar/VotesBar";
 
 const { like, dislike } = data.icons;
 
@@ -79,6 +80,12 @@ const VoteCard = ({
           {isVoted ? "Vote again" : "Vote now"}
         </VoteButton>
       </VoteSection>
+      <VotesBar
+        vote={stagedVote}
+        isVoted={isVoted}
+        imageLike={like.image}
+        imageDislike={dislike.image}
+      />
     </Container>
   );
 };

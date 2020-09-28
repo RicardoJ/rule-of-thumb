@@ -30,6 +30,7 @@ const Cards = styled.div`
   & > * {
     margin-right: 40px;
     margin-bottom: 40px;
+    display: grid;
   }
 `;
 
