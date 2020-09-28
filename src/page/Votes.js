@@ -41,7 +41,10 @@ const Votes = () => {
     let votation = state[id] || {};
     if (vote === "NEGATIVE") votation = incrementNegavites(votation);
     else votation = incrementPositives(votation);
-    const newState = { ...state, [id]: { ...votation, status: "VOTED" } };
+    const newState = {
+      ...state,
+      [id]: { ...votation, status: "VOTED", option: vote },
+    };
     setState(newState);
     saveVote(newState);
   };

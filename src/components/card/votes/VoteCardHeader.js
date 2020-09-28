@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import DislikeButton from "../../button/DislikeButton";
 import LikeButton from "../../button/LikeButton";
 
 const Container = styled.div`
@@ -22,11 +23,20 @@ const ImageVote = styled.div`
   margin: 0 10px 0 -55px;
 `;
 
-const VoteCardHeader = ({ name, date, section, like, id }) => {
-  return (
-    <Container>
-      <Name>
-        {id === 2 ? (
+const VoteCardHeader = ({
+  name,
+  date,
+  section,
+  like,
+  dislike,
+  vote,
+  isVoted,
+}) => {
+ 
+  const showResult = (option) => {
+    switch (option) {
+      case "POSITIVE":
+        return (
           <ImageVote>
             <LikeButton
               image={like.image}
@@ -35,7 +45,29 @@ const VoteCardHeader = ({ name, date, section, like, id }) => {
               imageSize="22px"
             />
           </ImageVote>
-        ) : null}
+        );
+        break;
+      case "NEGATIVE":
+        return (
+          <ImageVote>
+            <DislikeButton
+              image={dislike.image}
+              height="40px"
+              width="40px"
+              imageSize="22px"
+            />
+          </ImageVote>
+        );
+        break;
+
+      default:
+        break;
+    }
+  };
+  return (
+    <Container>
+      <Name>
+        {isVoted ? showResult(vote.option) : null}
         {name}
       </Name>
       <Date>

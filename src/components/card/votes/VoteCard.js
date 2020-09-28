@@ -51,7 +51,7 @@ const VoteCard = ({
         id={character.id}
         like={like}
         dislike={dislike}
-        stagedVote={vote}
+        vote={vote}
         isVoted={isVoted}
       />
       <VoteCardContent
