@@ -1,36 +1,44 @@
 {
-
+    "opinionCharacter": {
+        "id": 1,
+        "name": "Pope Francis",
+        "image": "imgHeader.svg"
+    },
     "characters": [{
             "id": 1,
-            "name": "Pope Francis",
-            "image": "imgHeader.svg"
+            "name": "Kanye West",
+            "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+            "image": "KanyeWest.svg",
+            "date": "1 month",
+            "section": "Entertainment"
         },
         {
             "id": 2,
-            "name": "Kanye West",
+            "name": "Mark Zuckerberg",
             "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
-            "image": "/assets/imgHeader.svg"
+            "image": "Mark.svg",
+            "date": "1 month",
+            "section": "Business"
         },
         {
             "id": 3,
-            "name": "Mark Zuckerberg",
+            "name": "Cristina Fernández de Kirchner",
             "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
-            "image": "imgHeader.svg"
+            "image": "Cristina.svg",
+            "date": "1 month",
+            "section": "Politics"
         },
         {
             "id": 4,
-            "name": "Cristina Fernández de Kirchner",
-            "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
-            "image": "/assets/imgHeader.svg"
-        },
-        {
-            "id": 5,
             "name": "Malala Yousafzai",
             "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
-            "image": "/assets/imgHeader.svg"
+            "image": "Malala.png",
+            "date": "1 month",
+            "section": "Entertainment"
         }
 
     ],
+
     "opinion": {
         "text": "He’s talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true pedophile punishing pontiff? (thumbs up) "
     },

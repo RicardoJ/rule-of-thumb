@@ -8,14 +8,13 @@ import CardHeader from "../components/card/CardHeader";
 import CardContent from "../components/card/CardContent";
 import CardFooter from "../components/card/CardFooter";
 
-const [header] = data.characters;
 
 const Container = styled.div`
   display: grid;
   padding: 35px 0 0 0;
   box-sizing: border-box;
   height: 100vh;
-  background-image: url(${require(`../assets/${header.image}`)});
+  background-image: url(${require(`../assets/${data.opinionCharacter.image}`)});
   background-size: cover;
   box-shadow: inset 0px 140px 74px -20px rgba(0, 0, 0, 0.57);
   color: white;
@@ -49,14 +48,8 @@ const DeadLine = styled.div`
 const DeadLineDescription = styled.div`
   font-size: 13px;
   text-transform: uppercase;
-  margin: 0px 35px 0 400px;
-  width: 5%;
-  &:after {
-    content: " ";
-    border-left: 9px solid red;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-  }
+  margin-left: 400px;
+  width: 8%;
 `;
 const DeadLineDays = styled.div`
   background-color: rgba(229, 228, 227, 0.7);
@@ -70,7 +63,7 @@ const Header = () => {
     <Container>
       <NavBar />
       <Card>
-        <CardHeader question="What's your opinion on" name={header.name} />
+        <CardHeader question="What's your opinion on" name={data.opinionCharacter.name} />
         <CardContent
           text={data.opinion.text}
           moreInformation="More information"
