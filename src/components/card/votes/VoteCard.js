@@ -6,14 +6,9 @@ import DislikeButton from "../../button/DislikeButton";
 import LikeButton from "../../button/LikeButton";
 import VoteButton from "../../button/VoteButton";
 import data from "../../../data";
+import { STATUS } from "../../../constants/constants";
 
 const { like, dislike } = data.icons;
-
-const STATUS = {
-  UNKNOWN: "UNKNOWN",
-  VOTED: "VOTED",
-  AGAIN: "READY_TO_VOTE_AGAIN",
-};
 
 const Container = styled.div`
   background-image: url(${(props) => props.backgroundImage});
@@ -54,6 +49,9 @@ const VoteCard = ({
         section={character.section}
         id={character.id}
         like={like}
+        dislike={dislike}
+        stagedVote={stagedVote}
+        isVoted={isVoted}
       />
       <VoteCardContent
         text={isVoted ? "Thank you for voting!" : character.description}
