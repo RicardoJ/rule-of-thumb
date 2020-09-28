@@ -51,7 +51,7 @@ const VoteCard = ({
         id={character.id}
         like={like}
         dislike={dislike}
-        stagedVote={stagedVote}
+        stagedVote={vote}
         isVoted={isVoted}
       />
       <VoteCardContent
@@ -81,7 +81,7 @@ const VoteCard = ({
         </VoteButton>
       </VoteSection>
       <VotesBar
-        vote={stagedVote}
+        vote={vote}
         isVoted={isVoted}
         imageLike={like.image}
         imageDislike={dislike.image}

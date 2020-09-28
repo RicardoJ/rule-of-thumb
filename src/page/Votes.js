@@ -4,7 +4,7 @@ import VoteCard from "../components/card/votes/VoteCard";
 import data from "../data";
 import { saveVote, getVoteState } from "../services";
 
-const increment = (n) => (n || 0) + 1;
+const increment = (n) => parseInt(n || 0) + 1;
 
 const incrementNegavites = ({ negatives, ...status } = {}) =>
   Object.assign(status, { negatives: increment(negatives) });
