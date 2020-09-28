@@ -1,9 +1,16 @@
 export const saveVote = (voteState) => {
-  let statusVote = window.localStorage.setItem("vote", voteState);
-  return statusVote ? false : statusVote;
- 
+  try {
+    return window.localStorage.setItem("vote", JSON.stringify(voteState));
+  } catch (error) {
+    return false;
+  }
 };
 
 export const getVoteState = () => {
-  return window.localStorage.getItem("vote");
+  try {
+    const state = JSON.parse(window.localStorage.getItem("vote"));
+    return state;
+  } catch (error) {
+    return {};
+  }
 };

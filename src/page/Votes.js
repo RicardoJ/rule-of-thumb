@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import DislikeButton from "../components/button/DislikeButton";
-import LikeButton from "../components/button/LikeButton";
-import VoteButton from "../components/button/VoteButton";
 import VoteCard from "../components/card/votes/VoteCard";
-import VoteCardContent from "../components/card/votes/VoteCardContent";
-import VoteCardHeader from "../components/card/votes/VoteCardHeader";
 import data from "../data";
 import { saveVote, getVoteState } from "../services";
 
-const { like, dislike } = data.icons;
+const increment = (n) => (n || 0) + 1;
+
+const incrementNegavites = ({ negatives, ...status } = {}) =>
+  Object.assign(status, { negatives: increment(negatives) });
+
+const incrementPositives = ({ positives, ...status } = {}) =>
+  Object.assign(status, { positives: increment(positives) });
+
 const Container = styled.div`
-  margin: 0 200px 0 200px;
   color: #ffff;
 `;
+
 const Title = styled.div`
   font-size: 40px;
   color: #333333;
@@ -24,57 +26,49 @@ const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-`;
-const VoteSection = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 200px;
-  padding: 0 0 0 30px;
+
+  & > * {
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
 `;
 
 const Votes = () => {
-  const [voted, setVoted] = useState(true);
+  const [state, setState] = useState(getVoteState() || {});
 
-  const doVote = () => {
-    setVoted(!voted);
-    saveVote(voted);
+  const saveCharacterVote = (id, vote) => {
+    let votation = state[id] || {};
+    if (vote === "NEGATIVE") votation = incrementNegavites(votation);
+    else votation = incrementPositives(votation);
+    const newState = { ...state, [id]: { ...votation, status: "VOTED" } };
+    setState(newState);
+    saveVote(newState);
+  };
+
+  const prepareToVoteAgain = (id) => {
+    const votation = { ...state[id], status: "READY_TO_VOTE_AGAIN" };
+    const newState = { ...state, [id]: votation };
+    setState(newState);
+    saveVote(newState);
   };
 
   return (
     <Container>
       <Title>Votes</Title>
       <Cards>
-        {data.characters.map((character) => (
-          <VoteCard key={character.id} backgroundImage={character.image}>
-            <VoteCardHeader
-              name={character.name}
-              date={character.date}
-              section={character.section}
+        {data.characters.map((character) => {
+          const { id } = character;
+          return (
+            <VoteCard
+              key={id}
+              vote={state[id]}
+              character={character}
+              backgroundImage={character.image}
+              onVote={saveCharacterVote}
+              onVoteAgain={prepareToVoteAgain}
             />
-            <VoteCardContent
-              text={
-                JSON.parse(getVoteState())
-                  ? data.voted.text
-                  : character.description
-              }
-            />
-            <VoteSection>
-              <LikeButton
-                image={like.image}
-                height="40px"
-                width="40px"
-                imageSize="22px"
-              />
-              <DislikeButton
-                image={dislike.image}
-                height="40px"
-                width="40px"
-                imageSize="22px"
-              />
-              <VoteButton doVote={doVote} />
-            </VoteSection>
-          </VoteCard>
-        ))}
+          );
+        })}
       </Cards>
     </Container>
   );

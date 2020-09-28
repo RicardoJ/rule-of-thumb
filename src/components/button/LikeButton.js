@@ -11,9 +11,9 @@ const LikeBtn = styled.button`
 const LikeImage = styled.img`
   width: ${(props) => props.imageSize || "36px"};
 `;
-const LikeButton = ({ image, height, width, imageSize }) => {
+const LikeButton = ({ image, height, width, imageSize, ...otherProps }) => {
   return (
-    <LikeBtn height={height} width={width}>
+    <LikeBtn height={height} width={width} {...otherProps}>
       <LikeImage
         imageSize={imageSize}
         alt="like"

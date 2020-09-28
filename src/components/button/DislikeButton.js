@@ -12,9 +12,9 @@ const DislikeBtn = styled.button`
 const DislikeImage = styled.img`
   width: ${(props) => props.imageSize || "36px"};
 `;
-const DislikeButton = ({ image, height, width, imageSize }) => {
+const DislikeButton = ({ image, height, width, imageSize, ...otherProps }) => {
   return (
-    <DislikeBtn height={height} width={width}>
+    <DislikeBtn height={height} width={width} {...otherProps}>
       <DislikeImage
         imageSize={imageSize}
         alt="dislike"
