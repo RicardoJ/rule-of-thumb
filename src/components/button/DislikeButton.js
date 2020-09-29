@@ -17,9 +17,9 @@ const DislikeImage = styled.img`
   width: ${(props) => props.imageSize || "36px"};
   @media (max-width: 768px) {
     height: 16px;
-    
   }
 `;
+
 const DislikeButton = ({ image, height, width, imageSize, ...otherProps }) => {
   return (
     <DislikeBtn height={height} width={width} {...otherProps}>

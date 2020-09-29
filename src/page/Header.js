@@ -8,7 +8,6 @@ import CardHeader from "../components/card/CardHeader";
 import CardContent from "../components/card/CardContent";
 import CardFooter from "../components/card/CardFooter";
 
-
 const Container = styled.div`
   display: grid;
   padding: 35px 0 0 0;
@@ -21,8 +20,7 @@ const Container = styled.div`
   @media (max-width: 768px) {
     height: 36vh;
     width: fit-content;
-}
-  
+  }
 `;
 
 const DeadLine = styled.div`
@@ -37,6 +35,7 @@ const DeadLine = styled.div`
     height: 22px;
   }
 `;
+
 const DeadLineDescription = styled.div`
   font-size: 13px;
   text-transform: uppercase;
@@ -48,6 +47,7 @@ const DeadLineDescription = styled.div`
     margin-left: 100px;
   }
 `;
+
 const DeadLineDays = styled.div`
   background-color: rgba(229, 228, 227, 0.7);
   font-size: 37px;
@@ -64,13 +64,16 @@ const Header = () => {
     <Container>
       <NavBar />
       <Card>
-        <CardHeader question="What's your opinion on" name={data.opinionCharacter.name} />
+        <CardHeader
+          question="What's your opinion on"
+          name={data.opinionCharacter.name}
+        />
         <CardContent
           text={data.opinion.text}
           moreInformation="More information"
-          wikipediaImage ={require(`../assets/icons/${data.icons.wikipedia.image}`)}
+          wikipediaImage={require(`../assets/icons/${data.icons.wikipedia.image}`)}
         />
-        <CardFooter text="What's Your Verdict"/>
+        <CardFooter text="What's Your Verdict" />
       </Card>
       <DeadLine>
         <DeadLineDescription>closing in</DeadLineDescription>

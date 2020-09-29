@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const HowItWorks = () => {
-    return ( <h1>How It Works</h1> );
-}
- 
+  return <h1>How It Works</h1>;
+};
+
 export default HowItWorks;
