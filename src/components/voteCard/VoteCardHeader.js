@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import DislikeButton from "../../button/DislikeButton";
-import LikeButton from "../../button/LikeButton";
+import DislikeButton from "../button/DislikeButton";
+import LikeButton from "../button/LikeButton";
 
 const Container = styled.div`
   position: relative;

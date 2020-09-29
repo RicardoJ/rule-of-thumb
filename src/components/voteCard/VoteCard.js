@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import VoteCardContent from "./VoteCardContent";
 import VoteCardHeader from "./VoteCardHeader";
-import DislikeButton from "../../button/DislikeButton";
-import LikeButton from "../../button/LikeButton";
-import VoteButton from "../../button/VoteButton";
-import data from "../../../data";
-import { STATUS } from "../../../constants/constants";
-import VotesBar from "../../voteBar/VotesBar";
+import DislikeButton from "../button/DislikeButton";
+import LikeButton from "../button/LikeButton";
+import VoteButton from "../button/VoteButton";
+import data from "../../data";
+import { STATUS } from "../../constants/constants";
+import VotesBar from "../voteBar/VotesBar";
 
 const { like, dislike } = data.icons;
 
@@ -51,7 +51,7 @@ const VoteCard = ({
   };
 
   return (
-    <Container backgroundImage={require(`../../../assets/${backgroundImage}`)}>
+    <Container backgroundImage={require(`../../assets/${backgroundImage}`)}>
       <VoteCardHeader
         name={character.name}
         date={character.date}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import VoteCard from "../components/card/votes/VoteCard";
+import VoteCard from "../components/voteCard/VoteCard";
 import data from "../data";
 import { saveVote, getVoteState } from "../services";
 
