@@ -10,7 +10,9 @@ const Container = styled.div`
   @media (max-width: 768px) {
     width: 200px;
     height: 200px;
-    margin-left: 100px;
+    margin-left: 44px;
+    margin-top: -10px;
+
     
   }
 `;

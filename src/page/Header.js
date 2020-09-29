@@ -44,7 +44,7 @@ const DeadLineDescription = styled.div`
   width: 8%;
   @media (max-width: 768px) {
     width: 18%;
-    font-size: 9px;
+    font-size: 7px;
     margin-left: 100px;
   }
 `;
