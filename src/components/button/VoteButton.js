@@ -8,6 +8,11 @@ const VoteButton = styled.button`
   width: 100px;
   color: white;
   font-size: 14px;
+  @media (max-width: 768px) {
+    margin-left: 5px;
+    font-size: 9px;
+    height: 24.5px;
+  }
 `;
 
 export default VoteButton;

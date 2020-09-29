@@ -7,16 +7,28 @@ const Container = styled.div`
   position: relative;
   padding: 40px 0 0 55px;
   margin-top: 310px;
+  @media (max-width: 768px) {
+    position: relative;
+    padding: 20px 0 0 50px;
+    margin-top: 150px;
+  }
 `;
 
 const Name = styled.div`
   display: flex;
   font-size: 52px;
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
+  
 `;
 
 const Date = styled.div`
   font-size: 15px;
   font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 8px;
+  }
 `;
 
 const ImageVote = styled.div`
@@ -32,7 +44,6 @@ const VoteCardHeader = ({
   vote,
   isVoted,
 }) => {
- 
   const showResult = (option) => {
     switch (option) {
       case "POSITIVE":

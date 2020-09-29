@@ -20,6 +20,11 @@ const Title = styled.div`
   font-size: 40px;
   color: #333333;
   margin: 0 0 40px 150px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin: 10px 0 20px 20px;
+  }
 `;
 
 const Cards = styled.div`
@@ -31,6 +36,13 @@ const Cards = styled.div`
     margin-right: 40px;
     margin-bottom: 40px;
     display: grid;
+  }
+  @media (max-width: 768px) {
+     & > * {
+    margin-right: 0;
+    margin-bottom: 20px;
+    display: grid;
+  }
   }
 `;
 

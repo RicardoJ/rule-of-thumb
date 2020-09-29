@@ -18,6 +18,10 @@ const Container = styled.div`
   overflow: hidden;
   width: 600px;
   height: 650px;
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 350px;
+  }
 `;
 
 const VoteSection = styled.div`
@@ -25,6 +29,10 @@ const VoteSection = styled.div`
   justify-content: space-between;
   width: 200px;
   padding-left: 55px;
+  @media (max-width: 768px) {
+    width: 130px;
+    height: 50px;
+  }
 `;
 
 const VoteCard = ({

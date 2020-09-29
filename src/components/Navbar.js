@@ -1,36 +1,58 @@
 import React from "react";
 import styled from "styled-components";
-import {  Link, Switch, Route } from "react-router-dom";
+import { Link, Switch, Route } from "react-router-dom";
 import data from "../data";
 import PastTrial from "../page/PastTrial";
 import HowItWorks from "../page/HowItWorks";
 import LogIn from "../page/LogIn";
-
 
 const { search } = data.icons;
 
 const Nav = styled.div`
   display: flex;
   justify-content: space-around;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+  }
 `;
 const Title = styled.div`
   font-size: 32px;
+  @media (max-width: 768px) {
+    margin-left: 20px;
+    font-size: 14px;
+    width: 97px;
+  }
 `;
 const Menu = styled.div`
   margin-left: 200px;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 `;
 const MenuItem = styled(Link)`
   font-size: 16px;
   margin-right: 80px;
   text-decoration: none;
   color: white;
+  @media (max-width: 768px) {
+    font-size: 8px;
+    margin-right: 20px;
+  }
 `;
 const SearchButton = styled.button`
   background: transparent;
   cursor: pointer;
   border: none;
+  @media (max-width: 768px) {
+    margin-top: -19px;
+    height: 50px;
+  }
 `;
-const SearchIcon = styled.img``;
+const SearchIcon = styled.img` height: 12px;`;
 
 const NavBar = () => {
   return (

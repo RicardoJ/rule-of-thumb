@@ -8,6 +8,9 @@ const Container = styled.div`
 
 const Text = styled.p`
   font-size: 16px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const VoteCardContent = ({text}) => {

@@ -18,21 +18,11 @@ const Container = styled.div`
   background-size: cover;
   box-shadow: inset 0px 140px 74px -20px rgba(0, 0, 0, 0.57);
   color: white;
-
-  /* phone or tablets */
-  @media only screen and (max-width: 768px) {
-    height: 43vh;
-  }
-
-  /* Tablets and desks
-    ------------------------------------------------------------------------- */
-  @media (max-width: 1024px) {
-  }
-
-  /* desk
-    ------------------------------------------------------------------------- */
-  @media (max-width: 1200px) {
-  }
+  @media (max-width: 768px) {
+    height: 36vh;
+    width: fit-content;
+}
+  
 `;
 
 const DeadLine = styled.div`
@@ -42,20 +32,31 @@ const DeadLine = styled.div`
   height: 44px;
   width: 100%;
   background-color: rgba(174, 167, 160, 0.4);
-
   box-sizing: border-box;
+  @media (max-width: 768px) {
+    height: 22px;
+  }
 `;
 const DeadLineDescription = styled.div`
   font-size: 13px;
   text-transform: uppercase;
   margin-left: 400px;
   width: 8%;
+  @media (max-width: 768px) {
+    width: 18%;
+    font-size: 9px;
+    margin-left: 100px;
+  }
 `;
 const DeadLineDays = styled.div`
   background-color: rgba(229, 228, 227, 0.7);
   font-size: 37px;
   color: #464646;
   width: 95%;
+  @media (max-width: 768px) {
+    height: 22px;
+    font-size: 16px;
+  }
 `;
 
 const Header = () => {
