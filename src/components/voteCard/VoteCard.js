@@ -60,7 +60,6 @@ const VoteCard = ({
         like={like}
         dislike={dislike}
         vote={vote}
-        isVoted={isVoted}
       />
       <VoteCardContent
         text={isVoted ? "Thank you for voting!" : character.description}

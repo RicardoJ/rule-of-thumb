@@ -34,20 +34,11 @@ const ImageVote = styled.div`
   margin: 0 10px 0 -55px;
 `;
 
-const VoteCardHeader = ({
-  name,
-  date,
-  section,
-  like,
-  dislike,
-  vote,
-  isVoted,
-}) => {
-  
+const VoteCardHeader = ({ name, date, section, like, dislike, vote }) => {
   return (
     <Container>
       <Name>
-        {isVoted && vote.option === "POSITIVE" ? (
+        {vote.option === "POSITIVE" ? (
           <ImageVote>
             <LikeButton
               image={like.image}
@@ -56,7 +47,7 @@ const VoteCardHeader = ({
               imageSize="22px"
             />
           </ImageVote>
-        ) : (
+        ) : vote.option === "NEGATIVE" ? (
           <ImageVote>
             <DislikeButton
               image={dislike.image}
@@ -65,7 +56,7 @@ const VoteCardHeader = ({
               imageSize="22px"
             />
           </ImageVote>
-        )}
+        ) : null}
         {name}
       </Name>
       <Date>
