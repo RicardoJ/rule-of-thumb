@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import VoteButtons from "../button/VoteButtons";
+import VoteButtons from "../../button/VoteButtons";
 
 
 const Text = styled.p`
