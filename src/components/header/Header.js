@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Card from "../card/Card";
+import Card from "../headerCard/HeaderCard";
 
 import NavBar from "../Navbar";
 import data from "../../data";
-import CardHeader from "../card/CardHeader";
-import CardContent from "../card/CardContent";
-import CardFooter from "../card/CardFooter";
+import CardHeader from "../headerCard/CardHeader";
+import CardContent from "../headerCard/CardContent";
+import CardFooter from "../headerCard/CardFooter";
 
 const Container = styled.div`
   display: grid;
