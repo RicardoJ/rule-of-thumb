@@ -1,19 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import Card from "../components/card/Card";
+import Card from "../card/Card";
 
-import NavBar from "../components/Navbar";
-import data from "../data";
-import CardHeader from "../components/card/CardHeader";
-import CardContent from "../components/card/CardContent";
-import CardFooter from "../components/card/CardFooter";
+import NavBar from "../Navbar";
+import data from "../../data";
+import CardHeader from "../card/CardHeader";
+import CardContent from "../card/CardContent";
+import CardFooter from "../card/CardFooter";
 
 const Container = styled.div`
   display: grid;
   padding: 35px 0 0 0;
   box-sizing: border-box;
   height: 100vh;
-  background-image: url(${require(`../assets/${data.opinionCharacter.image}`)});
+  background-image: url(${require(`../../assets/${data.opinionCharacter.image}`)});
   background-size: cover;
   box-shadow: inset 0px 140px 74px -20px rgba(0, 0, 0, 0.57);
   color: white;
@@ -71,7 +71,7 @@ const Header = () => {
         <CardContent
           text={data.opinion.text}
           moreInformation="More information"
-          wikipediaImage={require(`../assets/icons/${data.icons.wikipedia.image}`)}
+          wikipediaImage={require(`../../assets/icons/${data.icons.wikipedia.image}`)}
         />
         <CardFooter text="What's Your Verdict" />
       </Card>
