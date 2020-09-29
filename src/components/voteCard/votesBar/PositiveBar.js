@@ -21,7 +21,7 @@ const PositiveBar = ({ vote, percentagePositives, imageLike }) => {
   
     return (
     <PositivePercent vote={vote} percentagePositives={percentagePositives}>
-      <Image alt="like" src={require(`../../assets/icons/${imageLike}`)} />
+      <Image alt="like" src={require(`../../../assets/icons/${imageLike}`)} />
       {percentagePositives}%
     </PositivePercent>
   );

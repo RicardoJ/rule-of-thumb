@@ -22,7 +22,7 @@ const NegativeBar = ({ vote, percentageNegatives, imageDislike }) => {
     <NegativePercent vote={vote} percentageNegatives={percentageNegatives}>
       <Image
         alt="dislike"
-        src={require(`../../assets/icons/${imageDislike}`)}
+        src={require(`../../../assets/icons/${imageDislike}`)}
       />
       {percentageNegatives}%
     </NegativePercent>
