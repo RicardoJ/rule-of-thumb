@@ -20,7 +20,6 @@ const Name = styled.div`
   @media (max-width: 768px) {
     font-size: 25px;
   }
-  
 `;
 
 const Date = styled.div`
@@ -44,10 +43,11 @@ const VoteCardHeader = ({
   vote,
   isVoted,
 }) => {
-  const showResult = (option) => {
-    switch (option) {
-      case "POSITIVE":
-        return (
+  
+  return (
+    <Container>
+      <Name>
+        {isVoted && vote.option === "POSITIVE" ? (
           <ImageVote>
             <LikeButton
               image={like.image}
@@ -56,10 +56,7 @@ const VoteCardHeader = ({
               imageSize="22px"
             />
           </ImageVote>
-        );
-        break;
-      case "NEGATIVE":
-        return (
+        ) : (
           <ImageVote>
             <DislikeButton
               image={dislike.image}
@@ -68,17 +65,7 @@ const VoteCardHeader = ({
               imageSize="22px"
             />
           </ImageVote>
-        );
-        break;
-
-      default:
-        break;
-    }
-  };
-  return (
-    <Container>
-      <Name>
-        {isVoted ? showResult(vote.option) : null}
+        )}
         {name}
       </Name>
       <Date>
