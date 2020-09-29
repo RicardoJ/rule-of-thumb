@@ -7,7 +7,7 @@ import LikeButton from "../../button/LikeButton";
 import VoteButton from "../../button/VoteButton";
 import data from "../../../data";
 import { STATUS } from "../../../constants/constants";
-import VotesBar from "../../bar/VotesBar";
+import VotesBar from "../../voteBar/VotesBar";
 
 const { like, dislike } = data.icons;
 
