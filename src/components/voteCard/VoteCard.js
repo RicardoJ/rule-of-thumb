@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import VoteCardContent from "./VoteCardContent";
 import VoteCardHeader from "./VoteCardHeader";
-import DislikeButton from "../../button/DislikeButton";
-import LikeButton from "../../button/LikeButton";
-import VoteButton from "../../button/VoteButton";
-import data from "../../../data";
-import { STATUS } from "../../../constants/constants";
-import VotesBar from "../../bar/VotesBar";
+import DislikeButton from "../button/DislikeButton";
+import LikeButton from "../button/LikeButton";
+import VoteButton from "../button/VoteButton";
+import data from "../../data";
+import { STATUS } from "../../constants/constants";
+import VotesBar from "./votesBar/VotesBar";
 
 const { like, dislike } = data.icons;
 
@@ -18,6 +18,10 @@ const Container = styled.div`
   overflow: hidden;
   width: 600px;
   height: 650px;
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 350px;
+  }
 `;
 
 const VoteSection = styled.div`
@@ -25,6 +29,10 @@ const VoteSection = styled.div`
   justify-content: space-between;
   width: 200px;
   padding-left: 55px;
+  @media (max-width: 768px) {
+    width: 130px;
+    height: 50px;
+  }
 `;
 
 const VoteCard = ({
@@ -43,7 +51,7 @@ const VoteCard = ({
   };
 
   return (
-    <Container backgroundImage={require(`../../../assets/${backgroundImage}`)}>
+    <Container backgroundImage={require(`../../assets/${backgroundImage}`)}>
       <VoteCardHeader
         name={character.name}
         date={character.date}
@@ -52,7 +60,6 @@ const VoteCard = ({
         like={like}
         dislike={dislike}
         vote={vote}
-        isVoted={isVoted}
       />
       <VoteCardContent
         text={isVoted ? "Thank you for voting!" : character.description}

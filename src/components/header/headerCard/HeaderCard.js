@@ -7,6 +7,14 @@ const Container = styled.div`
   width: 600px;
   height: 500px;
   margin-left: 200px;
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+    margin-left: 44px;
+    margin-top: -10px;
+
+    
+  }
 `;
 
 const Card = ({ children }) => {

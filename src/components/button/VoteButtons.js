@@ -13,7 +13,7 @@ const Buttons = styled.div`
 const VoteButtons = () => {
   return (
     <Buttons>
-      <LikeButton image={like.image} height="121px" width="50%"/>
+      <LikeButton image={like.image} height="121px" width="50%" />
       <DislikeButton image={dislike.image} height="121px" width="50%" />
     </Buttons>
   );

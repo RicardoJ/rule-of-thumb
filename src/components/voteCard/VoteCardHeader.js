@@ -1,42 +1,44 @@
 import React from "react";
 import styled from "styled-components";
-import DislikeButton from "../../button/DislikeButton";
-import LikeButton from "../../button/LikeButton";
+import DislikeButton from "../button/DislikeButton";
+import LikeButton from "../button/LikeButton";
 
 const Container = styled.div`
   position: relative;
   padding: 40px 0 0 55px;
   margin-top: 310px;
+  @media (max-width: 768px) {
+    position: relative;
+    padding: 20px 0 0 50px;
+    margin-top: 150px;
+  }
 `;
 
 const Name = styled.div`
   display: flex;
   font-size: 52px;
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
 `;
 
 const Date = styled.div`
   font-size: 15px;
   font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 8px;
+  }
 `;
 
 const ImageVote = styled.div`
   margin: 0 10px 0 -55px;
 `;
 
-const VoteCardHeader = ({
-  name,
-  date,
-  section,
-  like,
-  dislike,
-  vote,
-  isVoted,
-}) => {
- 
-  const showResult = (option) => {
-    switch (option) {
-      case "POSITIVE":
-        return (
+const VoteCardHeader = ({ name, date, section, like, dislike, vote }) => {
+  return (
+    <Container>
+      <Name>
+        {vote.option === "POSITIVE" ? (
           <ImageVote>
             <LikeButton
               image={like.image}
@@ -45,10 +47,7 @@ const VoteCardHeader = ({
               imageSize="22px"
             />
           </ImageVote>
-        );
-        break;
-      case "NEGATIVE":
-        return (
+        ) : vote.option === "NEGATIVE" ? (
           <ImageVote>
             <DislikeButton
               image={dislike.image}
@@ -57,17 +56,7 @@ const VoteCardHeader = ({
               imageSize="22px"
             />
           </ImageVote>
-        );
-        break;
-
-      default:
-        break;
-    }
-  };
-  return (
-    <Container>
-      <Name>
-        {isVoted ? showResult(vote.option) : null}
+        ) : null}
         {name}
       </Name>
       <Date>
